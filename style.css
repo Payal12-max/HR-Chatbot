@@ -1,0 +1,96 @@
+html, body, .main, .block-container {
+    background-color: #bcba8ef0 !important;
+    color: #1F2937 !important;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    max-height:max-content;
+}
+/* ---------- Header ---------- */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #111;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* ---------- Question Box ---------- */
+.question {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgb(225, 227, 229);
+    border: 2px solid #0f1013;
+    border-radius: 10px;
+}
+
+/* ---------- Inputs & Select ---------- */
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox div[data-baseweb="select"] {
+    background-color: #5178e3dd;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+/* ---------- Labels ---------- */
+.stTextArea label,
+label {
+    font-weight: bold;
+    color: #222 !important;
+}
+
+/* ---------- Buttons ---------- */
+.st-key-pulse button {
+    background-color: #86a6da;
+    color: white;
+    border: none;
+    border: 10px solid #e1e2e5;
+    border-radius: 8px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+         box-shadow: 0 0 0 0 black;
+    }
+    70% {
+        box-shadow: 0 0 0 10px white;
+    }
+    100% {
+        box-shadow: 0 0 0 0 white;
+    }
+}
+.st-key-all button {
+    background-color: #86a6da;
+    color: white;
+    border: none;
+    border: 10px solid #e1e2e5;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.st-key-pulse Button:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+    animation: pulse 2s forwards;
+}
+
+.st-key-all   Button:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+    animation: pulse 2s forwards;
+}
