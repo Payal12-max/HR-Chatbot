@@ -4,17 +4,23 @@ from question_gen import generate_questions
 from storage import save_to_csv
 from email_utils import send_result_email
 
+
+# --- Set page config ---
+st.set_page_config(
+    page_title="HR Chatbot",
+    page_icon="🧑‍💼",
+    layout="wide"
+)
 # --- Load Custom CSS ---
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style.css")
-# --- Main Container ---
-st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
 # --- Header ---
 st.markdown("""
+<div class="main-container">
 <div class="header">
     <h1>🧑‍💼 HR Chatbot for Candidate Screening</h1>
     <p>Answer job-related questions, get scored, and receive your result instantly!</p>
@@ -68,8 +74,14 @@ if st.session_state.questions:
             else:
                 score, explanation = evaluate_answer(question, st.session_state.answers[i])
                 st.session_state.scores[i] = score
-                st.success(f"✅ Score: {score}/10")
-                st.info(f"💡 Explanation: {explanation}")
+                st.markdown(
+                    f"""<div class='score-box'>✅ Score: {score}/10</div>""",
+                    unsafe_allow_html=True
+                    )
+                st.markdown(
+                    f"""<div class='explanation-box'>💡 Explanation: {explanation}</div>""",
+                    unsafe_allow_html=True
+                    )
 
 # --- Submit Section ---
 if st.button("📨 Submit All",key="all"):
