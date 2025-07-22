@@ -104,16 +104,13 @@ if st.button("📨 Submit All",key="all"):
             st.session_state.scores,
             avg_score,
             status,
-            filename="candidate_results.csv"
+            filename="candidate-results.csv"
         )
-
-        st.success("✅ Responses saved to CSV!")
-        st.info(f"🎯 Final Status: **{status}** | Avg Score: {avg_score:.2f}/10")
-
+        st.markdown('<div class="success-box">✅ Responses saved to CSV!</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="status-box">🎯 Final Status: <strong>{status}</strong> | Avg Score: {avg_score:.2f}/10</div>', unsafe_allow_html=True)
+        
         if send_result_email(candidate_email, candidate_name, avg_score, status):
-            st.success("📧 Email sent to candidate!")
+            st.markdown('<div class="email-box">📧 Email sent to candidate!</div>', unsafe_allow_html=True)
         else:
-            st.error("❌ Failed to send email. Check credentials.")
+            st.markdown('<div class="error-box">❌ Failed to send email. Check credentials.</div>', unsafe_allow_html=True)
 
-# --- Close Main Container ---
-st.markdown('</div>', unsafe_allow_html=True)

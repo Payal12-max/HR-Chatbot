@@ -1,7 +1,7 @@
 import csv
 import os
 
-def save_to_csv(candidate_name, candidate_email, job_role, questions, answers, scores, average_score, status, filename="candidate_results.csv"):
+def save_to_csv(candidate_name, candidate_email, job_role, questions, answers, scores, average_score, status, filename="candidate-results.csv"):
     file_exists = os.path.isfile(filename)
 
     with open(filename, mode='a', newline='', encoding='utf-8') as file:
