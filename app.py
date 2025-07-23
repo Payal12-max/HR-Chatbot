@@ -4,21 +4,19 @@ from question_gen import generate_questions
 from storage import save_to_csv
 from email_utils import send_result_email
 
-
-# --- Set page config ---
 st.set_page_config(
     page_title="HR Chatbot",
     page_icon="🧑‍💼",
     layout="wide"
 )
-# --- Load Custom CSS ---
+
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style.css")
 
-# --- Header ---
+
 st.markdown("""
 <div class="main-container">
 <div class="header">
@@ -28,7 +26,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)  
 
-# --- Candidate Info ---
 st.markdown('<div class="section">', unsafe_allow_html=True)
 candidate_name = st.text_input("👤 Enter your name:",key="name")
 candidate_email = st.text_input("📧 Enter your email:")
@@ -39,13 +36,12 @@ if job_role == "Custom Role":
     custom_role = st.text_input("📝 Enter the custom job role:")
     if custom_role.strip():
         job_role = custom_role 
-         
-# --- Session State ---
+
 st.session_state.setdefault("questions", [])
 st.session_state.setdefault("answers", [])
 st.session_state.setdefault("scores", [])
 
-# --- Start Screening ---
+
 if st.button("🚀 Start Screening",key="pulse"):
     if not candidate_name.strip():
         st.warning("⚠️ Please enter your name.")
@@ -56,7 +52,6 @@ if st.button("🚀 Start Screening",key="pulse"):
         st.session_state.answers = [""] * len(st.session_state.questions)
         st.session_state.scores = [None] * len(st.session_state.questions)
 
-# --- Display Questions Dynamically ---
 if st.session_state.questions:
     for i, question in enumerate(st.session_state.questions):
         st.markdown(f"<div class='question'><h3>Q{i+1}: {question}</h3></div>", unsafe_allow_html=True)
@@ -83,7 +78,7 @@ if st.session_state.questions:
                     unsafe_allow_html=True
                     )
 
-# --- Submit Section ---
+
 if st.button("📨 Submit All",key="all"):
     if not candidate_name.strip():
         st.error("⚠️ Please enter your name.")

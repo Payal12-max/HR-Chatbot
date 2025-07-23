@@ -14,7 +14,6 @@ html, body, .main, .block-container {
     border: 2px solid #0f1013;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
-/* ---------- Header ---------- */
 .header {
     text-align: center;
     margin-bottom: 2rem;
@@ -32,7 +31,6 @@ html, body, .main, .block-container {
     color: #fffbfb;
 }
 
-/* ---------- Question Box ---------- */
 .question {
     margin: 1.5rem 0;
     padding: 1rem;
@@ -41,8 +39,6 @@ html, body, .main, .block-container {
     border-radius: 10px;
     color: #e5e5e5;
 }
-
-/* ---------- Inputs & Select ---------- */
 .stTextInput input,
 .stTextArea textarea,
 .stSelectbox div[data-baseweb="select"] {
@@ -53,18 +49,16 @@ html, body, .main, .block-container {
     font-weight: 500;
 }
 
-/* ---------- Labels ---------- */
 .stTextArea label,
 label {
     font-weight: bold;
     color: #222 !important;
 }
 
-/* ---------- Buttons ---------- */
 .st-key-pulse button {
     background-color: #2D3142;
     color: white;
-    border: 2px solid #ccc; /* Light outline */
+    border: 2px solid #ccc; 
     border-radius: 8px;
     padding: 12px 18px;
     margin-top: 10px;
@@ -89,7 +83,7 @@ label {
 .st-key-all button {
     background-color: #2D3142;
     color: white;
-    border: 2px solid #ccc; /* Light outline */
+    border: 2px solid #ccc;
     border-radius: 8px;
     padding: 12px 18px;
     margin-top: 10px;
@@ -122,7 +116,6 @@ label {
     color: white !important;
 }
 
-/* Start Screening Button Effect */
 button[kind="primary"] {
     transition: all 0.3s ease;
 }
@@ -131,9 +124,8 @@ button[kind="primary"]:active {
     color: white !important;
 }
 
-/* Score Message Style */
 .score-box {
-    background-color: #d1f7d1; /* soft green */
+    background-color: #d1f7d1; 
     border-left: 6px solid #28a745;
     color: #155724;
     font-weight: bold;
@@ -142,9 +134,9 @@ button[kind="primary"]:active {
     margin-top: 1rem;
 }
 
-/* Explanation Message Style */
+
 .explanation-box {
-    background-color: #e4f1ff; /* soft blue */
+    background-color: #e4f1ff; 
     border-left: 6px solid #007bff;
     color: #0c2f5c;
     font-weight: 500;

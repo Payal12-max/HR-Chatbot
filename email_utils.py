@@ -3,8 +3,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 def send_result_email(candidate_email, candidate_name, avg_score, status):
-    sender_email = "hrchatbot0@gmail.com"  # ✅ Fixed
-    sender_password = "iuqnnpjdjpygzggf"   # ✅ App Password
+    sender_email = "hrchatbot0@gmail.com"  
+    sender_password = "iuqnnpjdjpygzggf"   
 
     subject = "🎯 Screening Result - HR Chatbot"
     body = f"""

@@ -2,7 +2,6 @@ import re
 import streamlit as st
 from openai import OpenAI
 
-# Initialize the OpenAI client with Together API
 client = OpenAI(
     api_key=st.secrets["TOGETHER_API_KEY"],
     base_url="https://api.together.xyz/v1"
@@ -10,7 +9,6 @@ client = OpenAI(
 
 def evaluate_answer(question, answer):
     try:
-        # Strict prompt to enforce consistent format
         prompt = f"""
 You are a strict technical interviewer evaluating candidate responses.
 
@@ -28,7 +26,6 @@ Question: {question}
 Answer: {answer}
 """
 
-        # Call the LLM
         response = client.chat.completions.create(
             model="mistralai/Mixtral-8x7B-Instruct-v0.1",
             messages=[
@@ -39,13 +36,10 @@ Answer: {answer}
             max_tokens=300
         )
 
-        # Get response text
         content = response.choices[0].message.content.strip()
 
-        # Debug output
         st.text_area("🔍 LLM Raw Response", content, height=200)
 
-        # Extract score and validate format
         score_match =re.search(r"Score:\s*(\d{1,2})\s*/\s*(\d{1,2})",content, re.IGNORECASE)
         explanation_match = re.search(r"Explanation:\s*(.*)", content, re.IGNORECASE | re.DOTALL)
 
@@ -53,7 +47,6 @@ Answer: {answer}
             score = int(score_match.group(1))
             denominator = int(score_match.group(2))
 
-            # Check if the score is actually out of 10
             if denominator != 10:
                 score = 0
                 explanation = "⚠️ Invalid score format returned by the model (not out of 10)."
