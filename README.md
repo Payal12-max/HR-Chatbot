@@ -4,7 +4,7 @@ A smart AI-powered HR chatbot built with **Streamlit**, **OpenAI**, and **Google
 
 ---
 
-🚀 Features
+## 🚀 Features
 
 - 🧠 **AI-Powered Screening** using GPT-4 or Vertex AI
 - ❓ **Auto-Generated Questions** based on job role
@@ -14,9 +14,9 @@ A smart AI-powered HR chatbot built with **Streamlit**, **OpenAI**, and **Google
 - 📧 **Email Notification** to candidates
 - 🎨 **Clean UI** with custom CSS styling
 
- 🖥️ Live Demo
+ ## 🖥️ Live Demo
 
-```bash
+```
 hr-chatbot/
 ├── app.py                  # Streamlit frontend
 ├── chatbot_logic.py        # Evaluation & AI logic
@@ -26,19 +26,21 @@ hr-chatbot/
 ├── styles.css              # Custom styles
 ├── requirements.txt        # Python dependencies
 └── .streamlit/
-    └── secrets.toml        # API keys (hidden)```
+    └── secrets.toml        # API keys (hidden)
+```
 
 
-📤 Outputs
+## 📤 Outputs
 candidate_results.csv – contains candidate name, answers, scores, final status, and timestamp.
 
-📧 Email Format
+## 📧 Email Format
 Candidates receive a mail like:
 
-Subject: Interview Result - HR Chatbot
+```Subject: Interview Result - HR Chatbot
 Body: Hello [Candidate Name], Thank you for your submission. Your average score was [x]. You have been [Selected/Not Selected].
+```
 
-📌 To Do
+## 📌 To Do
 1. Add resume upload and parsing
 2.Deploy on Streamlit Cloud / Hugging Face Spaces
 3.Add authentication for HR users
