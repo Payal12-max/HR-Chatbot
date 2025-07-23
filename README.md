@@ -26,7 +26,7 @@ hr-chatbot/
 ├── styles.css              # Custom styles
 ├── requirements.txt        # Python dependencies
 └── .streamlit/
-    └── secrets.toml        # API keys (hidden)
+    └── secrets.toml        # API keys (hidden)```
 
 
 📤 Outputs
