@@ -1,12 +1,10 @@
 import re
 import streamlit as st
-from openai import OpenAI
+import openai 
 import random
 
-client = OpenAI(
-    api_key=st.secrets["TOGETHER_API_KEY"], 
-    base_url="https://api.together.xyz/v1"   
-)
+openai.api_key = st.secrets["TOGETHER_API_KEY"]
+openai.base_url = "https://api.together.xyz/v1"
 
 def generate_questions(job_role):
     variation_tag = random.choice(["Set A", "Set B", "Creative Version", "Variant X", "Unique Angle"])
@@ -24,7 +22,7 @@ Number them like:
 4. ...
 5. ...
 """
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model="mistralai/Mixtral-8x7B-Instruct-v0.1",
         messages=[
             {"role": "system", "content": "You are an HR assistant."},
