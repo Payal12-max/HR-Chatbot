@@ -48,10 +48,10 @@ Body: Hello [Candidate Name], Thank you for your submission. Your average score 
 5.Tab-Switch Detection
 6.UI/UX enhancements
 
-🤝 Contributing
+## 🤝 Contributing
 Pull requests are welcome! For major changes, open an issue first to discuss what you'd like to change.
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 Streamlit
 OpenAI
 Google Vertex AI
