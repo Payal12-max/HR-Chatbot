@@ -26,6 +26,7 @@ hr-chatbot/
 ├── requirements.txt           # Python dependencies
 └── .streamlit/
     └── secrets.toml           # API keys (hidden)
+
 📤 Outputs
 candidate_results.csv – contains candidate name, answers, scores, final status, and timestamp.
 
