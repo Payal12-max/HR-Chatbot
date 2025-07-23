@@ -16,16 +16,18 @@ A smart AI-powered HR chatbot built with **Streamlit**, **OpenAI**, and **Google
 
  🖥️ Live Demo
 
+```bash
 hr-chatbot/
-├── app.py                     # Streamlit frontend
-├── chatbot_logic.py           # Evaluation & AI logic
-├── question_gen.py            # Question generation logic
-├── email_utils.py             # Email sending functions
-├── storage.py                 # CSV saving utility
-├── styles.css                 # Custom styles
-├── requirements.txt           # Python dependencies
+├── app.py                  # Streamlit frontend
+├── chatbot_logic.py        # Evaluation & AI logic
+├── question_gen.py         # Question generation logic
+├── email_utils.py          # Email sending functions
+├── storage.py              # CSV saving utility
+├── styles.css              # Custom styles
+├── requirements.txt        # Python dependencies
 └── .streamlit/
-    └── secrets.toml           # API keys (hidden)
+    └── secrets.toml        # API keys (hidden)
+
 
 📤 Outputs
 candidate_results.csv – contains candidate name, answers, scores, final status, and timestamp.
