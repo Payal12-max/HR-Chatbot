@@ -5,10 +5,15 @@ from openai import OpenAI  # use OpenAI class, not import openai
 import random
 
 # ✅ Initialize OpenAI client for Together API
+from openai import OpenAI
+
 client = OpenAI(
-    api_key=st.secrets["TOGETHER_API_KEY"],
-    base_url="https://api.together.xyz/v1"
+    api_key=st.secrets["TOGETHER_API_KEY"]
 )
+
+# If you're using a custom base URL (like for Together.ai)
+client.base_url = "https://api.together.xyz/v1"
+
 
 def evaluate_answer(question, answer):
     try:

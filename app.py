@@ -1,6 +1,4 @@
 import streamlit as st
-import openai
-from openai import OpenAI
 from chatbot_logic import evaluate_answer
 from question_gen import generate_questions
 from storage import save_to_csv
@@ -17,7 +15,6 @@ def local_css(file_name):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style.css")
-
 
 st.markdown("""
 <div class="main-container">

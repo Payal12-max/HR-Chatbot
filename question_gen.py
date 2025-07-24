@@ -5,10 +5,15 @@ from openai import OpenAI
 import random
 
 # Use OpenAI client but for Together API
+from openai import OpenAI
+
 client = OpenAI(
-    api_key=st.secrets["TOGETHER_API_KEY"],
-    base_url="https://api.together.xyz/v1"  # Correct Together base URL
+    api_key=st.secrets["TOGETHER_API_KEY"]
 )
+
+# If you're using a custom base URL (like for Together.ai)
+client.base_url = "https://api.together.xyz/v1"
+
 
 def generate_questions(job_role):
     variation_tag = random.choice(["Set A", "Set B", "Creative Version", "Variant X", "Unique Angle"])
