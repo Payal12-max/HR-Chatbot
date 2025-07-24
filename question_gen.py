@@ -8,7 +8,6 @@ client = OpenAI(
     api_key=st.secrets["TOGETHER_API_KEY"]
 )
 
-# If you're using a custom base URL (like for Together.ai)
 client.base_url = "https://api.together.xyz/v1"
 
 
@@ -28,10 +27,8 @@ Number them like:
 4. ...
 5. ...
 """
-
-    # ✅ Corrected: use the `client` object (not `openai.chat.completions.create`)
     response = client.chat.completions.create(
-        model="mistralai/Mixtral-8x7B-Instruct-v0.1",  # make sure this model is supported
+        model="mistralai/Mixtral-8x7B-Instruct-v0.1", 
         messages=[
             {"role": "system", "content": "You are an HR assistant."},
             {"role": "user", "content": prompt}

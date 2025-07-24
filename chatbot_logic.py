@@ -1,14 +1,13 @@
 import re
 import streamlit as st
 import openai
-from openai import OpenAI  # use OpenAI class, not import openai
+from openai import OpenAI 
 import random
 
 client = OpenAI(
     api_key=st.secrets["TOGETHER_API_KEY"]
 )
 
-# If you're using a custom base URL (like for Together.ai)
 client.base_url = "https://api.together.xyz/v1"
 
 
@@ -31,7 +30,6 @@ Question: {question}
 Answer: {answer}
 """
 
-        # ✅ Use `client.chat.completions.create` instead of `openai.chat...`
         response = client.chat.completions.create(
             model="mistralai/Mixtral-8x7B-Instruct-v0.1",
             messages=[
