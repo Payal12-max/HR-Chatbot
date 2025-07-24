@@ -1,4 +1,6 @@
 import streamlit as st
+import openai
+from openai import OpenAI
 from chatbot_logic import evaluate_answer
 from question_gen import generate_questions
 from storage import save_to_csv

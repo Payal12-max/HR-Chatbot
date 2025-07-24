@@ -1,5 +1,6 @@
 import re
 import streamlit as st
+import openai
 from openai import OpenAI  # use OpenAI class, not import openai
 import random
 
