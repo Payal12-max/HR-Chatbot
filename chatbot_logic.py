@@ -1,9 +1,13 @@
 import re
 import streamlit as st
-import openai 
+from openai import OpenAI  # use OpenAI class, not import openai
+import random
 
-openai.api_key = st.secrets["TOGETHER_API_KEY"]
-openai.base_url = "https://api.together.xyz/v1"
+# ✅ Initialize OpenAI client for Together API
+client = OpenAI(
+    api_key=st.secrets["TOGETHER_API_KEY"],
+    base_url="https://api.together.xyz/v1"
+)
 
 def evaluate_answer(question, answer):
     try:
@@ -24,7 +28,8 @@ Question: {question}
 Answer: {answer}
 """
 
-        response = openai.chat.completions.create(
+        # ✅ Use `client.chat.completions.create` instead of `openai.chat...`
+        response = client.chat.completions.create(
             model="mistralai/Mixtral-8x7B-Instruct-v0.1",
             messages=[
                 {"role": "system", "content": "You are an HR assistant evaluating interview responses."},
@@ -36,8 +41,10 @@ Answer: {answer}
 
         content = response.choices[0].message.content.strip()
 
+        # Show raw LLM response
         st.text_area("🔍 LLM Raw Response", content, height=200)
 
+        # Score + Explanation parsing
         score_match = re.search(r"Score:\s*(\d{1,2})\s*/\s*(\d{1,2})", content, re.IGNORECASE)
         explanation_match = re.search(r"Explanation:\s*(.*)", content, re.IGNORECASE | re.DOTALL)
 
