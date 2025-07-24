@@ -4,9 +4,6 @@ import openai
 from openai import OpenAI  # use OpenAI class, not import openai
 import random
 
-# ✅ Initialize OpenAI client for Together API
-from openai import OpenAI
-
 client = OpenAI(
     api_key=st.secrets["TOGETHER_API_KEY"]
 )
