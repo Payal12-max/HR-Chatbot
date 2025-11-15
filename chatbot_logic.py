@@ -42,10 +42,8 @@ Answer: {answer}
 
         content = response.choices[0].message.content.strip()
 
-        # Show raw LLM response
         st.text_area("🔍 LLM Raw Response", content, height=200)
 
-        # Score + Explanation parsing
         score_match = re.search(r"Score:\s*(\d{1,2})\s*/\s*(\d{1,2})", content, re.IGNORECASE)
         explanation_match = re.search(r"Explanation:\s*(.*)", content, re.IGNORECASE | re.DOTALL)
 
@@ -67,3 +65,4 @@ Answer: {answer}
     except Exception as e:
         st.error(f"❌ Error evaluating answer: {e}")
         return 0, "Evaluation failed due to an internal error."
+
